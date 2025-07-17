@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ClientePedidosActivity">
+
+    <TextView
+        android:id="@+id/tv_client_name_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pedidos de Cliente:"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_no_client_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Este cliente no tiene pedidos registrados."
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_client_name_header" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_client_orders"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_client_name_header"
+        tools:listitem="@layout/item_pedido" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

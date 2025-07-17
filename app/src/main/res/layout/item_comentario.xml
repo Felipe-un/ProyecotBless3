@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_comment_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Este es un comentario de prueba sobre el producto." />
+
+        <TextView
+            android:id="@+id/tv_comment_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="?attr/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_comment_text"
+            tools:text="Calificación: 5/5" />
+
+        <TextView
+            android:id="@+id/tv_comment_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@+id/tv_comment_rating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_comment_text"
+            tools:text="(Categoría: Camiseta)" />
+
+        <TextView
+            android:id="@+id/tv_comment_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_comment_rating"
+            tools:text="Fecha: 09/07/2025 15:00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

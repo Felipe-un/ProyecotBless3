@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PedidoFormActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_pedido_form_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear Nuevo Pedido"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Selector de Cliente -->
+        <TextView
+            android:id="@+id/tv_select_client_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar Cliente:"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_pedido_form_title" />
+
+        <Spinner
+            android:id="@+id/spinner_clientes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_select_client_label" />
+
+        <!-- Botón para Añadir Productos -->
+        <Button
+            android:id="@+id/btn_add_products"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Añadir Productos al Pedido"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_clientes" />
+
+        <!-- Lista de Productos en el Pedido -->
+        <TextView
+            android:id="@+id/tv_products_in_order_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Productos en el Pedido:"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add_products" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_selected_products"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_products_in_order_label"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_pedido_producto_seleccionado" />
+
+        <TextView
+            android:id="@+id/tv_no_products_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No se han añadido productos."
+            android:visibility="gone"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView_selected_products" />
+
+        <!-- Selector de Estado del Pedido -->
+        <TextView
+            android:id="@+id/tv_status_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Estado del Pedido:"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_no_products_selected" />
+
+        <Spinner
+            android:id="@+id/spinner_order_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:entries="@array/order_status_array"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_status_label" />
+
+        <!-- Botones de Acción -->
+        <Button
+            android:id="@+id/btn_guardar_pedido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Guardar Pedido"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_order_status" />
+
+        <Button
+            android:id="@+id/btn_cancelar_pedido"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_guardar_pedido" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

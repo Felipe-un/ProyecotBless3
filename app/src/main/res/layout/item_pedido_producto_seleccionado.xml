@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_selected_product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_remove_product"
+            tools:text="Producto Seleccionado (x2)" />
+
+        <TextView
+            android:id="@+id/tv_selected_product_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_remove_product"
+            app:layout_constraintTop_toBottomOf="@+id/tv_selected_product_name"
+            tools:text="$150.00" />
+
+        <ImageButton
+            android:id="@+id/btn_remove_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Eliminar producto del pedido"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/holo_red_dark" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

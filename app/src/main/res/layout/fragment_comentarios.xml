@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ComentariosFragment">
+
+    <TextView
+        android:id="@+id/tv_title_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comentarios de Productos"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_comment_category_filter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
+        android:entries="@array/product_categories_filter_array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_comments" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_comments"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_comment_category_filter"
+        tools:listitem="@layout/item_comentario" />
+
+    <TextView
+        android:id="@+id/tv_no_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No hay comentarios en esta categoría."
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView_comments"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerView_comments"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView_comments"
+        app:layout_constraintTop_toTopOf="@+id/recyclerView_comments" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ClienteFormActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_cliente_form_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrar Cliente"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_cliente_nombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Cliente"
+            android:inputType="textPersonName|textCapWords"
+            android:padding="12dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cliente_form_title" />
+
+        <EditText
+            android:id="@+id/et_cliente_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Correo Electrónico"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_cliente_nombre" />
+
+        <EditText
+            android:id="@+id/et_cliente_telefono"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Número de Teléfono"
+            android:inputType="phone"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_cliente_email" />
+
+        <Button
+            android:id="@+id/btn_guardar_cliente"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Guardar Cliente"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_cliente_telefono" />
+
+        <Button
+            android:id="@+id/btn_cancelar_cliente"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_guardar_cliente" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

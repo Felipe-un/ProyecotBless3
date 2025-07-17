@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ProductoFormActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_form_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar Producto"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Nombre del Producto"
+            android:inputType="textCapSentences"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_form_title" />
+
+        <EditText
+            android:id="@+id/et_product_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="top"
+            android:hint="Descripción"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_product_name" />
+
+        <EditText
+            android:id="@+id/et_product_stock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Stock (unidades)"
+            android:inputType="number"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_product_description" />
+
+        <EditText
+            android:id="@+id/et_product_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Precio ($)"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_product_stock" />
+
+        <Spinner
+            android:id="@+id/spinner_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:entries="@array/product_categories_array"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_product_price" />
+
+        <!-- Sección de Imagen -->
+        <TextView
+            android:id="@+id/tv_image_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Imagen del Producto:"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_category" />
+
+        <ImageView
+            android:id="@+id/iv_product_image_preview"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/image_border"
+            android:contentDescription="Vista previa de la imagen del producto"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_image_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_image_label" />
+
+        <Button
+            android:id="@+id/btn_select_image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Seleccionar Imagen"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_product_image_preview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_product_image_preview"
+            app:layout_constraintTop_toTopOf="@+id/iv_product_image_preview" />
+
+        <!-- Indicador de carga de imagen -->
+        <ProgressBar
+            android:id="@+id/pb_image_upload"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_product_image_preview"
+            app:layout_constraintEnd_toEndOf="@+id/iv_product_image_preview"
+            app:layout_constraintStart_toStartOf="@+id/iv_product_image_preview"
+            app:layout_constraintTop_toTopOf="@+id/iv_product_image_preview" />
+
+
+        <Button
+            android:id="@+id/btn_save_product"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Guardar Producto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_product_image_preview" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Cancelar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_save_product" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

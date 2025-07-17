@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">ProyectoBless</string>
+    <string-array name="roles_array">
+        <item>admin</item>
+        <item>empleado</item>
+    </string-array>
+    <string-array name="product_categories_array">
+        <item>Camisetas / T-Shirts</item>
+        <item>Camisas</item>
+        <item>Blusas</item>
+        <item>Pantalones</item>
+        <item>Jeans</item>
+        <item>Faldas</item>
+        <item>Vestidos</item>
+        <item>Chaquetas</item>
+        <item>Abrigos</item>
+        <item>Sudaderas / Hoodies</item>
+        <item>Shorts / Bermudas</item>
+        <item>Leggings</item>
+        <item>Ropa interior</item>
+        <item>Ropa deportiva</item>
+        <item>Pijamas</item>
+    </string-array>
+    <string-array name="product_categories_filter_array">
+        <item>Todas las categorías</item>
+        <item>Camisetas / T-Shirts</item>
+        <item>Camisas</item>
+        <item>Blusas</item>
+        <item>Pantalones</item>
+        <item>Jeans</item>
+        <item>Faldas</item>
+        <item>Vestidos</item>
+        <item>Chaquetas</item>
+        <item>Abrigos</item>
+        <item>Sudaderas / Hoodies</item>
+        <item>Shorts / Bermudas</item>
+        <item>Leggings</item>
+        <item>Ropa interior</item>
+        <item>Ropa deportiva</item>
+        <item>Pijamas</item>
+    </string-array>
+    <string-array name="order_status_array">
+        <item>Pendiente</item>
+        <item>En Proceso</item>
+        <item>Completado</item>
+        <item>Cancelado</item>
+    </string-array>
+</resources>
